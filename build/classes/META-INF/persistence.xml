@@ -7,7 +7,11 @@
 	<persistence-unit name="LearningSystem_PU" transaction-type="RESOURCE_LOCAL">
 
 		<!-- add your entities one by one -->
-
+		 <class>model.Teacher</class>
+        
+        
+        <class>model.Students</class>
+        
 		<properties>
 			<!-- set up your database name -->
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/learningsystemdb" />
