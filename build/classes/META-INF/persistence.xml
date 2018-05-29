@@ -10,6 +10,7 @@
 		 <class>model.Teacher</class>
         
         <class>model.Result</class>
+         <class>model.Course</class>
         <class>model.ResultCompositeID</class>
        
         <class>model.Students</class>

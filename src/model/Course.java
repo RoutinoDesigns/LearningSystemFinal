@@ -2,12 +2,13 @@ package model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 //TODO connect teachers and students to the course. 
-
+@Entity
 public class Course {
 	// generate a new value with each insert operation without additional sql
 	// statements
