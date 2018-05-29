@@ -8,12 +8,10 @@ import javax.persistence.Persistence;
 
 
 public class Main {
-
+	private static final EntityManager entityManager = Manager.entityManager;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("LearningSystem_PU");
-		 EntityManager entityManager= emfactory.createEntityManager();
-		 entityManager.getTransaction().begin();
+
 		 
 
 	}

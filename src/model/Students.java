@@ -1,15 +1,19 @@
 package model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Students {
 
-	// generate a new value with each insert operation without additional sql
-	// statements
+	// Identity is used generate a new value with each insert operation without additional sql statements
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String studentsCode;
@@ -17,7 +21,8 @@ public class Students {
 	private String password;
 	private String name;
 	private String email;
-
+	@ManyToMany(fetch = FetchType.EAGER)
+	private Set<Course> courses = new HashSet<>();
 	public Students() {
 	}
 
@@ -30,11 +35,15 @@ public class Students {
 	}
 
 	public void takeCourse(Course c) {
-
+		Manager.entityManager.getTransaction().begin();
+		courses.add(c);
+		Manager.entityManager.getTransaction().commit();
 	}
 
 	public void leaveCourse(Course c) {
-
+		Manager.entityManager.getTransaction().begin();
+		courses.remove(c);
+		Manager.entityManager.getTransaction().commit();
 	}
 
 	public String getCode() {
@@ -52,5 +61,10 @@ public class Students {
 	public String getEmail() {
 		return email;
 	}
+
+	public Set<Course> getCourses() {
+		return courses;
+	}
+	
 
 }
