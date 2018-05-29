@@ -13,7 +13,7 @@ public class Course {
 	// statements
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String code;
+	private String courseCode;
 
 	private int credit;
 	private String name;
@@ -25,7 +25,7 @@ public class Course {
 
 	public Course(String code, int credit, String name, Teacher teacher,Date startTIME) {
 		super();
-		this.code = code;
+		this.courseCode = code;
 		this.credit = credit;
 		this.name = name;
 		this.startTIME = startTIME;
@@ -33,7 +33,7 @@ public class Course {
 	}
 
 	public String getCode() {
-		return code;
+		return courseCode;
 	}
 
 	public int getCredit() {

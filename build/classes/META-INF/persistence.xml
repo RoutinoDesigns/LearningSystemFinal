@@ -9,7 +9,9 @@
 		<!-- add your entities one by one -->
 		 <class>model.Teacher</class>
         
-        
+        <class>model.Result</class>
+        <class>model.ResultCompositeID</class>
+       
         <class>model.Students</class>
         
 		<properties>
