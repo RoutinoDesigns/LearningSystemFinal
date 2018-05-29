@@ -12,7 +12,7 @@ public class Teacher {
 	// statements
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String code;
+	private String teacherCode;
 
 	private String password;
 	private String name;
@@ -56,7 +56,7 @@ public class Teacher {
 	}
 
 	public String getCode() {
-		return code;
+		return teacherCode;
 	}
 
 	public String getPassword() {
